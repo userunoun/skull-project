@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Skull</title>
+</head>
+
+<body>
+    <div class="search">
+        <input placeholder="Enter URL" type="text" id="search_content">
+        <button type="submit" id="search_button">Go</button>
+    </div>
+    <br />
+    <div id="loading" style="display: none;">Loading...</div>
+    <div id="search_result" style="display: none;">
+        <div class="results-summary-container" id="results-summary-container">
+            <div class="results-summary-container__result">
+                <div class="heading-tertiary">Result</div>
+                <div class="result-box">
+                    <div class="heading-primary" id="web-score">00</div>
+                    <p class="result">of 100</p>
+                </div>
+                <div class="result-text-box">
+                    <div class="heading-secondary" id="result"></div>
+                    <p class="paragraph">
+                        Trust Score
+                    </p>
+                </div>
+            </div>
+            <div class="results-summary-container__options">
+                <div class="heading-secondary heading-secondary--color">Summary</div>
+                <div class="summary-result-options">
+                    <div class="result-option result-option-reaction">
+                        <div class="icon-box">
+                            <span class="reaction-icon-text">HTTPS</span>
+                        </div>
+                        <div class="result-box">
+                            <div id="httpsBlock"></div>
+                        </div>
+                    </div>
+                    <div class="result-option result-option-memory">
+                        <div class="icon-box">
+                            <span class="memory-icon-text">SSL Certificate</span>
+                        </div>
+                        <div class="result-box">
+                            <div id="sslc"></div>
+                        </div>
+                    </div>
+                    <div class="result-option result-option-verbal">
+                        <div class="icon-box">
+                            <span class="verbal-icon-text">Author Credentials</span>
+                        </div>
+                        <div class="result-box">
+                            <div id="acd"></div>
+                        </div>
+                    </div>
+                    <div class="result-option result-option-Visual">
+                        <div class="icon-box">
+                            <span class="visual-icon-text">Domain</span>
+                        </div>
+                        <div class="result-box">
+                            <div id="domainId"></div>
+                        </div>
+                    </div>
+                    <div class="result-option result-option-Age">
+                        <div class="icon-box">
+                            <span class="Age-icon-text">Age</span>
+                        </div>
+                        <div class="result-box">
+                            <div id="age"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <!--details-->
+        <div class="details" id="details">
+            <details>
+                <div class="detail-Inside">
+                    <details>
+                        <summary>Key facts</summary>
+                        <div class="detail-box">
+                            <div class="keyPoints">
+                                <span>Website Type</span>
+                                <span id="websiteType" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Domain Age</span>
+                                <span id="DomainAge" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Alexa Rank</span>
+                                <span id="alexaRank" class="keyText"></span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Server</summary>
+                        <div class="detail-box">
+                            <div class="keyPoints">
+                                <span>Organization</span>
+                                <span id="organization" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Country</span>
+                                <span id="Country" class="keyText"></span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Who is</summary>
+                        <div class="detail-box">
+                            <div class="keyPoints">
+                                <span>Name</span>
+                                <span id="websiteName" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Domain Extension</span><br>
+                                <span id="domainExtension" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Register Website</span>
+                                <span id="Reg-Web" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>IP</span>
+                                <span id="IP" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>SSL Certificate</span>
+                                <span id="ssl-cert" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Reputation</span>
+                                <span id="reputation" class="keyText"></span>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Security</summary>
+                        <div class="detail-box">
+                            <div class="keyPoints">
+                                <span>Malware</span>
+                                <span id="malware" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Phishing</span>
+                                <span id="phishing" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Scam</span>
+                                <span id="scam" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Spam</span>
+                                <span id="spam" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Safe Browsing</span>
+                                <span id="safeBrowsing" class="keyText"></span>
+                            </div>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>Registrant</summary>
+                        <div class="detail-box">
+                            <div class="keyPoints">
+                                <span>Name</span>
+                                <span id="registrantName" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Organization</span><br>
+                                <span id="registrantOrganization" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Country</span>
+                                <span id="registrantCountry" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>State</span>
+                                <span id="registrantState" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>City</span>
+                                <span id="registrantCity" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Street<br></span>
+                                <span id="registrantStreet" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Postal Code</span>
+                                <span id="registrantPostalCode" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Phone</span>
+                                <span id="registrantPhone" class="keyText"></span>
+                            </div>
+                            <div class="keyPoints">
+                                <span>Email</span>
+                                <span id="registrantEmail" class="keyText"></span>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </details>
+        </div>
+        <!-- description -->
+        <div class="description-icon">
+            <details>
+                <summary>Description</summary>
+                <p class="description" id="description"></p>
+            </details>
+        </div>
+    </div>
+    <!-- Disclaimer -->
+    <div class="disclaimer" id="disclaimer">
+        <p>
+            Stay informed and browse safely by checking a website’s security status before sharing personal or financial
+            information.
+        </p>
+    </div>
+    <div class="blank" id="blank"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
