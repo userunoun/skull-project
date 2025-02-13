@@ -2,7 +2,7 @@ const axios = require("axios");
 require("dotenv").config();
 
 async function getWhoisData(domain) {
-    const API_KEY = process.env.API_KEY;
+    const API_KEY = process.env.WHOIS_API_KEY;
     if (!API_KEY) {
         console.error("API_KEY is not defined in environment variables");
         return { error: "API_KEY is not defined" };
